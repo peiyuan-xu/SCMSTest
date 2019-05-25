@@ -19,7 +19,7 @@ chain2_url = 'http://192.168.1.154:8081/servicegw/seller_statistics'
 # qps 10 100 1000 100
 def send(url, t_in):
     # t_each = 40
-    t_each = 80
+    t_each = 20
     num = 0
     # print("qps: " + str(qps))
     t_auto_start = time.localtime()
@@ -33,17 +33,18 @@ def send(url, t_in):
         # print(time.time() - temp_t1)
         num += 1
         temp_t = time.time() - t_in
-        if temp_t < 10:
-            time.sleep(1)
-        elif temp_t < 20:
-            time.sleep(0.5)
-        elif temp_t < 30:
-            # time.sleep(0.2)
-            time.sleep(0.1)
-        else:
-            # time.sleep(1)
-            time.sleep(0.05)
-            pass
+        time.sleep(0.2)
+        # if temp_t < 10:
+        #     time.sleep(1)
+        # elif temp_t < 20:
+        #     time.sleep(0.5)
+        # elif temp_t < 30:
+        #     # time.sleep(0.2)
+        #     time.sleep(0.1)
+        # else:
+        #     # time.sleep(1)
+        #     time.sleep(0.05)
+        #     pass
 
     print("request num: " + str(num))
 
@@ -56,15 +57,15 @@ def main():
     t = time.time()
     process_num = 4
     process = []
-    for i in range(process_num):
-        t_in = time.time()
-        p = multiprocessing.Process(target=send, args=(chain1_url, t_in))
-        p.daemon = True
-        p.start()
-        process.append(p)
-    for p in process:
-        p.join()
-
+    # for i in range(process_num):
+    #     t_in = time.time()
+    #     p = multiprocessing.Process(target=send, args=(chain1_url, t_in))
+    #     p.daemon = True
+    #     p.start()
+    #     process.append(p)
+    # for p in process:
+    #     p.join()
+    send(chain1_url, t)
     t_e = time.time()
     print(t_e - t)
 

@@ -47,9 +47,9 @@ plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[1] for t in t_chain1], 
 plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[2] for t in t_chain1], c='y', label='Reviews In Chain1')
 plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[3] for t in t_chain1], c='b', label='Score In Chain1')
 
-plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[1] for t in t_chain2], c='r', marker='o', label='Books In Chain1')
-plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[2] for t in t_chain2], c='y', marker='o', label='Reviews In Chain1')
-plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[3] for t in t_chain2], c='b', marker='o', label='Score In Chain1')
+# plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[1] for t in t_chain2], c='r', marker='o', label='Books In Chain1')
+# plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[2] for t in t_chain2], c='y', marker='o', label='Reviews In Chain1')
+# plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[3] for t in t_chain2], c='b', marker='o', label='Score In Chain1')
 
 plt.legend()
 plt.show()
@@ -58,7 +58,7 @@ plt.figure(2)
 plt.xlabel("Time(s)")
 plt.ylabel("Response Time(ms)")
 plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[4] for t in t_chain1], label='Chain1')
-plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[4] for t in t_chain2], c='r', marker='o', label='Chain2')
+# plt.plot([(t[0] - base_time)/1000 for t in t_chain1], [t[4] for t in t_chain2], c='r', marker='o', label='Chain2')
 
 plt.legend()
 plt.show()
